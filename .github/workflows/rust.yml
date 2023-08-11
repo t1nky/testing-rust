@@ -32,7 +32,7 @@ jobs:
           git tag -a $FULL_TAG -m "Published version $FULL_TAG" $env:GITHUB_SHA
           git push origin $FULL_TAG
       - name: Build
-        run: cargo build --verbose --target x86_64-pc-windows-gnu
+        run: cargo build --verbose --release
       - name: Run tests
         run: cargo test --verbose
       - name: Release
