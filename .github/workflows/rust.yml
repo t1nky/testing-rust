@@ -16,12 +16,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          override: true
-          target: x86_64-pc-windows-gnu
+      - uses: dtolnay/rust-toolchain@stable
 
       - name: Configure sccache env var and set build profile to ephemeral build
         run: |
